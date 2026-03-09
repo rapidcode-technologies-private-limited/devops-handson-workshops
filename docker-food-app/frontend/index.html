@@ -1,0 +1,14 @@
+<h2>Restaurant Order System</h2>
+
+<button onclick="order('Pizza')">Order Pizza</button>
+<button onclick="order('Burger')">Order Burger</button>
+
+<script>
+function order(item){
+ fetch("http://localhost:5000/order",{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify({item:item})
+ })
+}
+</script>
